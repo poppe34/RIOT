@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Freie Universität Berlin
+ * Copyright (C) 2015 Matt Poppe <matt@poppe.me>
  *
  * This file is subject to the terms and conditions of the GNU Lesser General
  * Public License v2.1. See the file LICENSE in the top level directory for more
@@ -7,18 +7,17 @@
  */
 
 /**
- * @ingroup     cpu_stm32f4
+ * @ingroup     cpu_tiva
  * @{
  *
  * @file
  * @brief       Low-level GPIO driver implementation
  *
- * @author      Hauke Petersen <mail@haukepetersen.de>
- * @author      Fabian Nack <nack@inf.fu-berlin.de>
+ * @author      Matt Poppe <matt@poppe.me>
  *
  * @}
  */
-#if 0 /*This is just to prevent compiling early on will remove */
+#if (1) /*This is just to prevent compiling early on will remove */
 #include "cpu.h"
 #include "sched.h"
 #include "thread.h"
@@ -46,9 +45,9 @@ static exti_ctx_t exti_chan[GPIO_ISR_CHAN_NUMOF];
 /**
  * @brief   Extract the port base address from the given pin identifier
  */
-static inline GPIO_TypeDef *_port(gpio_t pin)
+static inline uint32_t _port(gpio_t pin)
 {
-    return (GPIO_TypeDef *)(pin & ~(0x0f));
+    return (uint32_t)(pin & ~(0x0ff));
 }
 
 /**
@@ -57,40 +56,30 @@ static inline GPIO_TypeDef *_port(gpio_t pin)
  * The port number is extracted by looking at bits 10, 11, 12, 13 of the base
  * register addresses.
  */
-static inline int _port_num(gpio_t pin)
-{
-    return ((pin >> 10) & 0x0f);
-}
+// static inline int _port_num(gpio_t pin)
+// {
+//     return ((pin >> 10) & 0x0f);
+// }
 
 /**
  * @brief   Extract the pin number from the last 4 bit of the pin identifier
  */
-static inline int _pin_num(gpio_t pin)
+static inline uint32_t _pin_num(gpio_t pin)
 {
-    return (pin & 0x0f);
+    return (uint32_t)(pin & 0xff);
 }
 
 int gpio_init(gpio_t pin, gpio_dir_t dir, gpio_pp_t pullup)
 {
-    GPIO_TypeDef *port = _port(pin);
-    int pin_num = _pin_num(pin);
+    uint32_t port = _port(pin);
+    uint32_t pin_num = _pin_num(pin);
 
     /* enable clock */
-    RCC->AHB1ENR |= (RCC_AHB1ENR_GPIOAEN << _port_num(pin));
+
     /* configure pull register */
-    port->PUPDR &= ~(3 << (2 * pin_num));
-    port->PUPDR |= (pullup << (2 * pin_num));
+
     /* set direction */
-    if (dir == GPIO_DIR_OUT) {
-        port->MODER &= ~(3 << (2 * pin_num));   /* set pin to output mode */
-        port->MODER |= (1 << (2 * pin_num));
-        port->OTYPER &= ~(1 << pin_num);        /* set to push-pull */
-        port->OSPEEDR |= (3 << (2 * pin_num));  /* set to high speed */
-        port->ODR &= ~(1 << pin_num);           /* set pin to low signal */
-    }
-    else {
-        port->MODER &= ~(3 << (2 * pin_num));   /* configure pin as input */
-    }
+
     return 0;
 }
 
@@ -98,8 +87,8 @@ int gpio_init_int(gpio_t pin,
                    gpio_pp_t pullup, gpio_flank_t flank,
                    gpio_cb_t cb, void *arg)
 {
-    int pin_num = _pin_num(pin);
-    int port_num = _port_num(pin);
+    uint32_t pin_num = _pin_num(pin);
+    uint32_t port_num = _port_num(pin);
 
     /* configure and save exti configuration struct */
     exti_chan[pin_num].cb = cb;
@@ -121,16 +110,13 @@ int gpio_init_int(gpio_t pin,
     /* configure the active edge(s) */
     switch (flank) {
         case GPIO_RISING:
-            EXTI->RTSR |= (1 << pin_num);
-            EXTI->FTSR &= ~(1 << pin_num);
+
             break;
         case GPIO_FALLING:
-            EXTI->RTSR &= ~(1 << pin_num);
-            EXTI->FTSR |= (1 << pin_num);
+
             break;
         case GPIO_BOTH:
-            EXTI->RTSR |= (1 << pin_num);
-            EXTI->FTSR |= (1 << pin_num);
+
             break;
     }
     /* enable specific pin as exti sources */
@@ -145,15 +131,10 @@ int gpio_init_int(gpio_t pin,
 
 void gpio_init_af(gpio_t pin, gpio_af_t af)
 {
-    GPIO_TypeDef *port = _port(pin);
+    uint32_t port = _port(pin);
     uint32_t pin_num = _pin_num(pin);
 
-    /* set pin to AF mode */
-    port->MODER &= ~(3 << (2 * pin_num));
-    port->MODER |= (2 << (2 * pin_num));
-    /* set selected function */
-    port->AFR[(pin_num > 7) ? 1 : 0] &= ~(0xf << ((pin_num & 0x07) * 4));
-    port->AFR[(pin_num > 7) ? 1 : 0] |= (af << ((pin_num & 0x07) * 4));
+
 }
 
 void gpio_irq_enable(gpio_t pin)
@@ -168,14 +149,10 @@ void gpio_irq_disable(gpio_t pin)
 
 int gpio_read(gpio_t pin)
 {
-    GPIO_TypeDef *port = _port(pin);
+    uint32_t port = _port(pin);
     uint32_t pin_num = _pin_num(pin);
 
-    if (port->MODER & (3 << (pin_num * 2))) {   /* if configured as output */
-        return port->ODR & (1 << pin_num);      /* read output data reg */
-    } else {
-        return port->IDR & (1 << pin_num);      /* else read input data reg */
-    }
+    return GPIOPinRead(port, pin_num);
 }
 
 void gpio_set(gpio_t pin)
@@ -206,7 +183,7 @@ void gpio_write(gpio_t pin, int value)
     }
 }
 
-void isr_exti(void)
+void isr_exti_handler(void)
 {
     for (int i = 0; i < GPIO_ISR_CHAN_NUMOF; i++) {
         if (EXTI->PR & (1 << i)) {

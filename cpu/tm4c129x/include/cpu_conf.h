@@ -33,12 +33,7 @@ extern "C" {
 #include "hw/tm4c1294ncpdt.h"
 #endif
 
-//#include "hw_ints.h"
 #include "hw/hw_memmap.h"
-//#include "hw_nvic.h"
-//#include "hw_sysctl.h"
-//#include "hw_types.h"
-//#include "cortex-m4-def.h"
 #include "periph_ti/cpu.h"
 #include "periph_ti/debug.h"
 #include "periph_ti/interrupt.h"
