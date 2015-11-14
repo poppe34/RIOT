@@ -44,6 +44,12 @@ void auto_init_ksz8851snl(void)
 	gnrc_netdev2_init(_netdev2_eth_stack, MAC_STACKSIZE,
 			  MAC_PRIO, "gnrc_ksz8851snl", &_gnrc_ksz8851snl);
 }
+void ksz8851snl_eepromWriteMac(ksz8851snl_t *dev, uint8_t* buf);
+void temp_set_mac(void)
+{
+    ksz8851snl_eepromWriteMac(&ksz8851snl, NULL);
+}
+
 #else
 typedef int dont_be_pedantic;
 #endif /*  MODULE_KSZ8851SNL */

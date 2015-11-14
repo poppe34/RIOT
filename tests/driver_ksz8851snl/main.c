@@ -40,6 +40,10 @@
 
 #include "net/gnrc/pktdump.h"
 #include "net/gnrc.h"
+#include "ksz8851snl.h"
+
+#define MSG_QUEUE_SIZE 1
+msg_t msgq[MSG_QUEUE_SIZE];
 
 
 int main(void)
@@ -59,9 +63,11 @@ int main(void)
 //    dump.demux_ctx = GNRC_NETREG_DEMUX_CTX_ALL;
 //    gnrc_netreg_register(GNRC_NETTYPE_UNDEF, &dump);
 
+    msg_init_queue(msgq, MSG_QUEUE_SIZE);
 
     (void) puts("Welcome to RIOT!");
 
+    temp_set_mac();
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE);
 

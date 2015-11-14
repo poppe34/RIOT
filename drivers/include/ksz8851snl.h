@@ -46,6 +46,8 @@ typedef struct {
     mutex_t mutex;          /**< KSZ mutex */
 } ksz8851snl_t;
 
+void temp_set_mac(void); /*delete soon */
+
 /**
  * @brief Setup an ksz8851snl based device state.
  *
@@ -58,7 +60,7 @@ typedef struct {
  * @param[in]   int_pin pin the device will trigger an interrupt on
  * @param[in]   rst_pin pin used to reset the device.  Pin low to reset.
  */
- 
+
  void ksz8851snl_setup(ksz8851snl_t *dev, spi_t spi, gpio_t cs, gpio_t int_pin,
      gpio_t rst_pin);
 #ifdef __cplusplus

@@ -129,7 +129,152 @@ static uint8_t reg_get8(ksz8851snl_t *dev, uint16_t reg)
 
 	return result[2];
 }
+#define KSZ8851_EEPROM_DELAY		1U
 
+typedef struct eeprom_data {
+    uint16_t    reg;		/* data sent to KSZ */
+    uint8_t     cs;			/* Chip Select bit ctrl */
+    uint8_t     clk;		/* Clock bit ctrl */
+    uint8_t     ctrl; 		/* enable control bits */
+    uint8_t		en; 		/* enable software control */
+    uint8_t     data_bit;	/* Data bit ctrl */
+}eeprom_data_t;
+
+void ksz8851snl_eepromDataFrameSend(ksz8851snl_t *dev, eeprom_data_t *data)
+{
+    data->reg = data->ctrl ? EECR_ENABLE_SOFTWARE_CTRL : 0;
+    data->reg |= data->en ? EECR_EEPROM_ACCESS : 0;
+    data->reg |= data->cs ? EECR_SELECT_BIT : 0;
+    data->reg |= data->clk ? EECR_CLK_BIT : 0;
+    data->reg |= data->data_bit ? EECR_DATA_BIT : 0;
+
+    reg_set(dev, KSZ8851_EEPROM_CTRL, data->reg);
+}
+
+void ksz8851snl_eepromAquire(ksz8851snl_t *dev, eeprom_data_t *data)
+{
+    data->ctrl = 1;
+    data->en = 1;
+    data->clk = 0;
+    data->cs = 1;
+    data->data_bit = 1;
+
+    ksz8851snl_eepromDataFrameSend(dev, data);
+}
+
+void ksz8851snl_eepromRelease(ksz8851snl_t *dev, eeprom_data_t *data)
+{
+    data->ctrl = 0;
+    data->en = 1;
+    data->clk = 0;
+    data->cs = 0;
+    data->data_bit = 0;
+
+    ksz8851snl_eepromDataFrameSend(dev, data);
+}
+
+void ksz8851snl_eepromSendBit(ksz8851snl_t *dev, eeprom_data_t *running_data)
+{
+    ksz8851snl_eepromDataFrameSend(dev, running_data);
+    //xtimer_usleep(KSZ8851_EEPROM_DELAY);
+    running_data->clk = 1;
+    ksz8851snl_eepromDataFrameSend(dev, running_data);
+    //xtimer_usleep(KSZ8851_EEPROM_DELAY);
+    running_data->clk = 0;
+    ksz8851snl_eepromDataFrameSend(dev, running_data);
+}
+
+void ksz8851snl_eepromSendBits(ksz8851snl_t *dev, eeprom_data_t *running_data, uint16_t data, uint8_t len)
+{
+	uint8_t x;
+    for(x = len; x; x--)
+    {
+    	running_data->data_bit = (data >> (x-1)) & 0x01;
+    	ksz8851snl_eepromSendBit(dev, running_data);
+    }
+}
+
+void ksz8851snl_eepromSendEwen(ksz8851snl_t *dev, eeprom_data_t *running_data)
+{
+	/* Aquire EEPROM */
+	ksz8851snl_eepromAquire(dev, running_data);
+
+	/*
+	 * Send 9 bits signaling EWEN
+	 * 	starter bit: 0b1
+	 * 	Opcode: 0b00
+	 * 	Address: 0b11xxxx
+	 */
+	uint16_t data = 0x130;
+	ksz8851snl_eepromSendBits(dev, running_data, data, 9);
+
+    /* Release EEPROM */
+    ksz8851snl_eepromRelease(dev, running_data);
+
+}
+
+void ksz8851snl_eepromSendEwds(ksz8851snl_t *dev, eeprom_data_t *running_data)
+{
+	/* Aquire EEPROM */
+	ksz8851snl_eepromAquire(dev, running_data);
+
+	/*
+	 * Send 9 bits signaling EWEN
+	 * 	starter bit: 0b1
+	 * 	Opcode: 0b00
+	 * 	Address: 0b00xxxx
+	 */
+	uint16_t data = 0x100;
+	ksz8851snl_eepromSendBits(dev, running_data, data, 9);
+
+    /* Release EEPROM */
+    ksz8851snl_eepromRelease(dev, running_data);
+
+}
+void ksz8851snl_eepromWriteByte(ksz8851snl_t *dev, uint8_t addr, uint16_t data)
+{
+    eeprom_data_t running_data;
+
+//    DEBUG(SECT_NAME"EEPROM Enabled\n");
+
+    /* Chip Select high and start clk low along with starter bit*/
+    ksz8851snl_eepromSendEwen(dev, &running_data);
+
+	/* Aquire EEPROM */
+	ksz8851snl_eepromAquire(dev, &running_data);
+
+    /* Starter Bit */
+    running_data.data_bit = 1;
+    ksz8851snl_eepromSendBit(dev, &running_data);
+
+    /* Send Write Opcode 0b01*/
+    running_data.data_bit = 0;
+    ksz8851snl_eepromSendBit(dev, &running_data);
+    running_data.data_bit = 1;
+    ksz8851snl_eepromSendBit(dev, &running_data);
+
+    /* Write Addr */
+    ksz8851snl_eepromSendBits(dev, &running_data, addr, 6);
+
+    /* Write Data */
+    ksz8851snl_eepromSendBits(dev, &running_data, data, 16);
+
+    /* Release EEPROM */
+    ksz8851snl_eepromRelease(dev, &running_data);
+
+    /* Send EWDS */
+    ksz8851snl_eepromSendEwds(dev, &running_data);
+}
+
+void ksz8851snl_eepromWriteMac(ksz8851snl_t *dev, uint8_t* buf)
+{
+    reg_set(dev, KSZ8851_EEPROM_CTRL, EECR_EEPROM_ACCESS);
+
+    ksz8851snl_eepromWriteByte(dev, 0x3, KSZ8851_MAC_HIGH);
+    ksz8851snl_eepromWriteByte(dev, 0x2, KSZ8851_MAC_MID);
+    ksz8851snl_eepromWriteByte(dev, 0x1, KSZ8851_MAC_LOW);
+
+}
 
 static void ksz8851snl_get_mac_addr(netdev2_t *encdev, uint8_t* buf)
 {
@@ -455,7 +600,7 @@ static void ksz8851snl_isr(netdev2_t *netdev)
 static int ksz8851snl_reset(ksz8851snl_t *dev)
 {
 	uint16_t dev_id;
-
+#if KSZ8851_HARD_RESET_ONLY == 0
 	/* First attempt reset is a soft reset */
 	reg_set(dev, KSZ8851_GRR_REG, GRR_DEV_RESET);
 	xtimer_usleep(1000);
@@ -468,7 +613,7 @@ static int ksz8851snl_reset(ksz8851snl_t *dev)
 
 	if ((dev_id & 0xFFF0) == CHIP_ID_8851_16)
 		return 0;
-
+#endif
 	/* Second attempt reset is a hard reset */
 	gpio_clear(dev->rst);
 	xtimer_usleep(KSZ8851SNL_RST_DELAY);
@@ -481,7 +626,7 @@ static int ksz8851snl_reset(ksz8851snl_t *dev)
 	if ((dev_id & 0xFFF0) == CHIP_ID_8851_16)
 		return 0;
 
-	DEBUG(SECT_NAME "Reset Failed\n");
+	DEBUG(SECT_NAME "Hard Reset Failed\n");
 	return 0;
 }
 
@@ -513,11 +658,24 @@ static int ksz8851snl_init(netdev2_t *encdev)
 	/* Set Power Mode */
 	reg_set(dev, KSZ8851_PMECR_REG, PMECR_NORMAL);
 
+#if KSZ8851SNL_MAC_FROM_EEPROM
+    /* Check if the EEPROM Latched bit was set */
+    uint16_t chip_config = reg_get(dev, KSZ8851_CC_REG);
+
+    if((chip_config & KSZ8851SNL_EEPROM_PRESENCES) == 0)
+    {
+        DEBUG(SECT_NAME" EEPROM not present look to change config\n");
+    } else {
+        chip_config = reg_get(dev, KSZ8851_EEPROM_CTRL);
+        DEBUG(SECT_NAME"EEPROM CTRL: 0x%04x)\n", chip_config);
+    }
+
+#else
 	/* Setup MAC from config file TODO: Create a better way to setup MAC*/
 	reg_set(dev, KSZ8851_MARL_REG, KSZ8851_MAC_LOW);
 	reg_set(dev, KSZ8851_MARM_REG, KSZ8851_MAC_MID);
 	reg_set(dev, KSZ8851_MARH_REG, KSZ8851_MAC_HIGH);
-
+#endif
 	#if ENABLE_DEBUG
 	uint16_t mac_low = reg_get(dev, KSZ8851_MARL_REG);
 	uint16_t mac_middle = reg_get(dev, KSZ8851_MARM_REG);

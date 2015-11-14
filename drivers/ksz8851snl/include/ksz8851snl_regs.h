@@ -31,8 +31,24 @@
 #define KSZ8851_CMD_B2        0x1000
 #define KSZ8851_CMD_B3        0x2000
 
-#define CHIP_ID_REG         0xC0
-#define CHIP_ID_8851_16     0x8870
+#define CHIP_ID_REG             0xC0
+#define CHIP_ID_8851_16         0x8870
+#define KSZ8851_CC_REG          0x08
+
+#define KSZ8851_EEPROM_CTRL     0x22
+#   define EECR_EEPROM_ACCESS               (1<<5)
+#   define EECR_ENABLE_SOFTWARE_CTRL        (1<<4)
+#   define EECR_STATUS_BIT                  (1<<3)
+#   define EERC_STATUS_BIT_POS              3
+#   define EECR_DATA_BIT                (1<<2)
+#   define EECR_DATA_BIT_ZERO               (0)
+#   define EECR_DATA_BIT_POS                2
+#   define EECR_CLK_BIT                     (1<<1)
+#   define EECR_CLK_BIT_POS                 1
+#   define EECR_SELECT_BIT                  (1<<0)
+#   define EECR_SOFTWARE_WRITE
+#   define EECR_SOFTWARE_READ
+
 
 #define KSZ8851_MAHTR0_REG 		0xA0
 #define KSZ8851_MAHTR1_REG		0XA2
