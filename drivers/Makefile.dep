@@ -32,6 +32,10 @@ ifneq (,$(filter kw2xrf,$(USEMODULE)))
   USEMODULE += netif
 endif
 
+ifneq (,$(filter ksz8851snl,$(USEMODULE)))
+  USEMODULE += gnrc_netdev2
+endif
+
 ifneq (,$(filter lm75a,$(USEMODULE)))
     USEMODULE += xtimer
 endif
