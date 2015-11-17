@@ -178,9 +178,14 @@ ifneq (,$(filter gnrc_ndp_%,$(USEMODULE)))
 endif
 
 ifneq (,$(filter gnrc_ndp,$(USEMODULE)))
+  ifneq (,$(filter gnrc_sixlowpan,$(USEMODULE)))
+    USEMODULE += gnrc_sixlowpan_nd
+  else
+    USEMODULE += gnrc_ndp_node
+  endif
+  USEMODULE += gnrc_ndp_internal
   USEMODULE += gnrc_icmpv6
   USEMODULE += random
-  USEMODULE += timex
   USEMODULE += xtimer
 endif
 
@@ -256,7 +261,7 @@ ifneq (,$(filter gnrc_nettest,$(USEMODULE)))
   USEMODULE += gnrc_netreg
   USEMODULE += gnrc_netif
   USEMODULE += gnrc_pktbuf
-  USEMODULE += vtimer
+  USEMODULE += xtimer
 endif
 
 ifneq (,$(filter gnrc_pktdump,$(USEMODULE)))

@@ -1,0 +1,207 @@
+KSZ8851SNL_REGS_H	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851SNL_REGS_H$/;"	macro	line:22
+IO_REG_READ	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define IO_REG_READ /;"	macro	line:25
+IO_REG_WRITE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define IO_REG_WRITE /;"	macro	line:26
+FIFO_RX_READ	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define FIFO_RX_READ /;"	macro	line:27
+FIFO_TX_WRITE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define FIFO_TX_WRITE /;"	macro	line:28
+KSZ8851_CMD_B0	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_CMD_B0 /;"	macro	line:29
+KSZ8851_CMD_B1	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_CMD_B1 /;"	macro	line:30
+KSZ8851_CMD_B2	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_CMD_B2 /;"	macro	line:31
+KSZ8851_CMD_B3	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_CMD_B3 /;"	macro	line:32
+CHIP_ID_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define CHIP_ID_REG /;"	macro	line:34
+CHIP_ID_8851_16	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define CHIP_ID_8851_16 /;"	macro	line:35
+KSZ8851_CC_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_CC_REG /;"	macro	line:36
+KSZ8851_EEPROM_CTRL	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_EEPROM_CTRL /;"	macro	line:38
+EECR_EEPROM_ACCESS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_EEPROM_ACCESS /;"	macro	line:39
+EECR_ENABLE_SOFTWARE_CTRL	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_ENABLE_SOFTWARE_CTRL /;"	macro	line:40
+EECR_STATUS_BIT	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_STATUS_BIT /;"	macro	line:41
+EERC_STATUS_BIT_POS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EERC_STATUS_BIT_POS /;"	macro	line:42
+EECR_DATA_BIT	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_DATA_BIT /;"	macro	line:43
+EECR_DATA_BIT_ZERO	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_DATA_BIT_ZERO /;"	macro	line:44
+EECR_DATA_BIT_POS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_DATA_BIT_POS /;"	macro	line:45
+EECR_CLK_BIT	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_CLK_BIT /;"	macro	line:46
+EECR_CLK_BIT_POS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_CLK_BIT_POS /;"	macro	line:47
+EECR_SELECT_BIT	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_SELECT_BIT /;"	macro	line:48
+EECR_SOFTWARE_WRITE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_SOFTWARE_WRITE$/;"	macro	line:49
+EECR_SOFTWARE_READ	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define EECR_SOFTWARE_READ$/;"	macro	line:50
+KSZ8851_MAHTR0_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_MAHTR0_REG /;"	macro	line:53
+KSZ8851_MAHTR1_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_MAHTR1_REG	/;"	macro	line:54
+KSZ8851_MAHTR2_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_MAHTR2_REG	/;"	macro	line:55
+KSZ8851_MAHTR3_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_MAHTR3_REG	/;"	macro	line:56
+KSZ8851_P1SR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_P1SR_REG /;"	macro	line:58
+P1SR_LINK_GOOD	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define P1SR_LINK_GOOD	/;"	macro	line:61
+KSZ8851_INT_STATUS_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_INT_STATUS_REG /;"	macro	line:62
+KSZ8851_INT_EN_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_INT_EN_REG /;"	macro	line:63
+KSZ8851_P1CR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_P1CR_REG /;"	macro	line:66
+P1CR_AN_ENABLE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define P1CR_AN_ENABLE /;"	macro	line:67
+P1CR_HP_MDIX	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define P1CR_HP_MDIX	/;"	macro	line:68
+P1CR_FORCE_DUPLEX	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define P1CR_FORCE_DUPLEX	/;"	macro	line:69
+KSZ8851_GRR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_GRR_REG	/;"	macro	line:71
+GRR_QUEUE_RESET	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define GRR_QUEUE_RESET	/;"	macro	line:72
+GRR_DEV_RESET	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define GRR_DEV_RESET	/;"	macro	line:73
+KSZ8851_P1MBCR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_P1MBCR_REG /;"	macro	line:75
+P1MBCR_LLB	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define P1MBCR_LLB /;"	macro	line:76
+P1MBCR_FORCE_100	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define P1MBCR_FORCE_100 /;"	macro	line:77
+P1MBCR_AN_ENABLE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define P1MBCR_AN_ENABLE /;"	macro	line:78
+P1MBCR_RESTART_AN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define P1MBCR_RESTART_AN /;"	macro	line:79
+P1MBCR_FORCE_DUPLEX	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define P1MBCR_FORCE_DUPLEX /;"	macro	line:80
+P1MBCR_HP_MDIX	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define P1MBCR_HP_MDIX /;"	macro	line:81
+P1MBCR_FORCE_MDIX	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define P1MBCR_FORCE_MDIX /;"	macro	line:82
+KSZ8851_OBCR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_OBCR_REG /;"	macro	line:85
+BUS_CLOCK_166	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define   BUS_CLOCK_166 /;"	macro	line:86
+BUS_CLOCK_DIVIDEDBY_5	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define   BUS_CLOCK_DIVIDEDBY_5 /;"	macro	line:87
+BUS_CLOCK_DIVIDEDBY_3	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define   BUS_CLOCK_DIVIDEDBY_3 /;"	macro	line:88
+BUS_CLOCK_DIVIDEDBY_2	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define   BUS_CLOCK_DIVIDEDBY_2 /;"	macro	line:89
+BUS_CLOCK_DIVIDEDBY_1	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define   BUS_CLOCK_DIVIDEDBY_1 /;"	macro	line:90
+BUS_CLOCK_DIVIDED_MASK	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define   BUS_CLOCK_DIVIDED_MASK /;"	macro	line:91
+KSZ8851_PMECR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_PMECR_REG /;"	macro	line:94
+PMECR_NORMAL	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define PMECR_NORMAL	/;"	macro	line:95
+KSZ8851_IER_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_IER_REG /;"	macro	line:98
+KSZ8851_ISR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_ISR_REG /;"	macro	line:99
+IER_LCIE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define IER_LCIE /;"	macro	line:101
+IER_TXIE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define IER_TXIE /;"	macro	line:102
+IER_RXIE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define IER_RXIE /;"	macro	line:103
+IER_RX_OVERRUN_IRQ_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define IER_RX_OVERRUN_IRQ_EN	/;"	macro	line:104
+IER_RX_PROC_STOPPED_IRQ_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define IER_RX_PROC_STOPPED_IRQ_EN	/;"	macro	line:105
+IER_TX_PROC_STOPPED_IRQ_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define IER_TX_PROC_STOPPED_IRQ_EN	/;"	macro	line:106
+ISR_LCIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_LCIS /;"	macro	line:110
+ISR_TXIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_TXIS /;"	macro	line:111
+ISR_RXIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_RXIS /;"	macro	line:112
+ISR_RXOIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_RXOIS /;"	macro	line:113
+ISR_TXPSIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_TXPSIS /;"	macro	line:114
+ISR_RXPSIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_RXPSIS /;"	macro	line:115
+ISR_TXSAIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_TXSAIS /;"	macro	line:116
+ISR_RXWFDIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_RXWFDIS /;"	macro	line:117
+ISR_RXMPDIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_RXMPDIS /;"	macro	line:118
+ISR_LDIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_LDIS /;"	macro	line:119
+ISR_EDIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_EDIS /;"	macro	line:120
+ISR_SPIBEIS	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define ISR_SPIBEIS /;"	macro	line:121
+KSZ8851_RXFCTR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXFCTR_REG /;"	macro	line:125
+KSZ8851_RXDTTR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXDTTR_REG	/;"	macro	line:126
+KSZ8851_RXDBCTR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXDBCTR_REG	/;"	macro	line:127
+KSZ8851_RXCR1_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXCR1_REG /;"	macro	line:129
+RXCR1_FLUSH_RX_Q	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_FLUSH_RX_Q /;"	macro	line:130
+RXCR1_UDP_CS_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_UDP_CS_EN /;"	macro	line:131
+RXCR1_TCP_CS_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_TCP_CS_EN /;"	macro	line:132
+RXCR1_IP_CS_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_IP_CS_EN /;"	macro	line:133
+RXCR1_MAC_ADDR_FILT_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_MAC_ADDR_FILT_EN /;"	macro	line:134
+RXCR1_FLOW_CTRL_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_FLOW_CTRL_EN /;"	macro	line:135
+RXCR1_RX_ERR_FRAME_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RX_ERR_FRAME_EN /;"	macro	line:136
+RXCR1_RX_MULTICAST_ADDR_FILT_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RX_MULTICAST_ADDR_FILT_EN /;"	macro	line:137
+RXCR1_RX_BROADCAST_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RX_BROADCAST_EN /;"	macro	line:138
+RXCR1_RX_ALL_MULTICAST	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RX_ALL_MULTICAST /;"	macro	line:139
+RXCR1_RX_UNICAST_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RX_UNICAST_EN /;"	macro	line:140
+RXCR1_RX_ALL_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RX_ALL_EN /;"	macro	line:141
+RXCR1_RX_INVERSE_FILTER_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RX_INVERSE_FILTER_EN /;"	macro	line:142
+RXCR1_RX_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RX_EN /;"	macro	line:143
+RXCR1_RXE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RXE /;"	macro	line:144
+RXCR1_RXAE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR1_RXAE /;"	macro	line:145
+KSZ8851_RXCR2_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXCR2_REG /;"	macro	line:147
+RXCR2_RX_ERR_FRAME_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_ERR_FRAME_EN /;"	macro	line:148
+RXCR2_RX_SRC_ADDR_FILT_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_SRC_ADDR_FILT_EN /;"	macro	line:149
+RXCR2_RX_ICMP_CS_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_ICMP_CS_EN /;"	macro	line:150
+RXCR2_RX_UDP_LITE_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_UDP_LITE_EN /;"	macro	line:151
+RXCR2_RX_CHK_SUM_ZERO_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_CHK_SUM_ZERO_EN /;"	macro	line:152
+RXCR2_RX_FRAG_PASS_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_FRAG_PASS_EN /;"	macro	line:153
+RXCR2_RX_CTRL_BURST_LEN_4	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_CTRL_BURST_LEN_4 /;"	macro	line:154
+RXCR2_RX_CTRL_BURST_LEN_8	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_CTRL_BURST_LEN_8 /;"	macro	line:155
+RXCR2_RX_CTRL_BURST_LEN_16	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_CTRL_BURST_LEN_16 /;"	macro	line:156
+RXCR2_RX_CTRL_BURST_LEN_32	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_CTRL_BURST_LEN_32 /;"	macro	line:157
+RXCR2_RX_CTRL_BURST_LEN_FRAME	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXCR2_RX_CTRL_BURST_LEN_FRAME /;"	macro	line:158
+KSZ8851_RXFHSR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXFHSR_REG /;"	macro	line:161
+RXFHSR_RX_VALID_FRAME	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_RX_VALID_FRAME	/;"	macro	line:162
+RXFHSR_ICMP_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_ICMP_ERR	/;"	macro	line:163
+RXFHSR_IP_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_IP_ERR	/;"	macro	line:164
+RXFHSR_TCP_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_TCP_ERR	/;"	macro	line:165
+RXFHSR_UDP_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_UDP_ERR	/;"	macro	line:166
+RXFHSR_BROADCAST	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_BROADCAST	/;"	macro	line:167
+RXFHSR_MULTICAST	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_MULTICAST	/;"	macro	line:168
+RXFHSR_UNICAST	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_UNICAST	/;"	macro	line:169
+RXFHSR_PHY_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_PHY_ERR	/;"	macro	line:170
+RXFHSR_FRAME_ETHER	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_FRAME_ETHER	/;"	macro	line:171
+RXFHSR_FRAME_LEN_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_FRAME_LEN_ERR	/;"	macro	line:172
+RXFHSR_RUNT_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_RUNT_ERR	/;"	macro	line:173
+RXFHSR_BAD_CRC_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_BAD_CRC_ERR	/;"	macro	line:174
+RXFHSR_ANY_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFHSR_ANY_ERR	/;"	macro	line:175
+KSZ8851_RXFHBCR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXFHBCR_REG /;"	macro	line:186
+KSZ8851_RXQCR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXQCR_REG /;"	macro	line:188
+RXQCR_DURATION_TIMER_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define 	RXQCR_DURATION_TIMER_EN /;"	macro	line:189
+RXQCR_FRAME_CNT_IRQ_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXQCR_FRAME_CNT_IRQ_EN /;"	macro	line:190
+RXQCR_AUTO_DEQUE_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXQCR_AUTO_DEQUE_EN /;"	macro	line:191
+RXQCR_TWO_BYTE_OFFSET	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^	#define RXQCR_TWO_BYTE_OFFSET	/;"	macro	line:192
+RXQCR_QUEUE_ACCESS_EN	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#   define  RXQCR_QUEUE_ACCESS_EN /;"	macro	line:193
+RXQCR_RELEASE_RX_ERR	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define 	RXQCR_RELEASE_RX_ERR	/;"	macro	line:195
+KSZ8851_RXFDPR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_RXFDPR_REG /;"	macro	line:198
+RXFDPR_RXFPAI	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define RXFDPR_RXFPAI /;"	macro	line:199
+RXFDPR_RESET_PTR_AUTO_INC	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#	define RXFDPR_RESET_PTR_AUTO_INC	/;"	macro	line:200
+KSZ8851_TXCR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_TXCR_REG /;"	macro	line:205
+TXCR_TCGICMP	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXCR_TCGICMP /;"	macro	line:206
+TX_CTRL_UDP_CHECKSUM	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^	#define TX_CTRL_UDP_CHECKSUM	/;"	macro	line:207
+TXCR_TCGTP	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXCR_TCGTP /;"	macro	line:208
+TXCR_TCGIP	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXCR_TCGIP /;"	macro	line:209
+TXCR_FTXQ	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXCR_FTXQ /;"	macro	line:210
+TXCR_TXFCPE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXCR_TXFCPE /;"	macro	line:211
+TXCR_TXPE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXCR_TXPE /;"	macro	line:212
+TXCR_TXCE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXCR_TXCE /;"	macro	line:213
+TXCR_TXE	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXCR_TXE /;"	macro	line:214
+KSZ8851_TXMIR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_TXMIR_REG /;"	macro	line:215
+KSZ8851_TXQCR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_TXQCR_REG /;"	macro	line:216
+TXQCR_TX_CMD	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXQCR_TX_CMD /;"	macro	line:217
+KSZ8851_TXFDPR_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_TXFDPR_REG /;"	macro	line:219
+TXFDPR_TXFPAI	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^    #define TXFDPR_TXFPAI /;"	macro	line:220
+KSZ8851_MARL_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_MARL_REG /;"	macro	line:226
+KSZ8851_MARM_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_MARM_REG /;"	macro	line:227
+KSZ8851_MARH_REG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/include/ksz8851snl_regs.h	/^#define KSZ8851_MARH_REG /;"	macro	line:228
+ENABLE_DEBUG	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^#define ENABLE_DEBUG /;"	macro	line:19	file:
+ksz8851snl	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^static ksz8851snl_t ksz8851snl;$/;"	variable	line:23	file:
+MAC_STACKSIZE	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^#define MAC_STACKSIZE /;"	macro	line:28	file:
+MAC_PRIO	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^#define MAC_PRIO /;"	macro	line:29	file:
+_netdev2_eth_stack	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^static char _netdev2_eth_stack[MAC_STACKSIZE + DEBUG_EXTRA_STACKSIZE];$/;"	variable	line:33	file:
+_gnrc_ksz8851snl	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^static gnrc_netdev2_t _gnrc_ksz8851snl;$/;"	variable	line:34	file:
+auto_init_ksz8851snl	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^void auto_init_ksz8851snl(void)$/;"	function	line:35	signature:(void)
+temp_set_mac	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^void temp_set_mac()$/;"	function	line:48
+dont_be_pedantic	/Users/poppe/MyCode/RIOT/sys/auto_init/netif/auto_init_ksz8851snl.c	/^typedef int dont_be_pedantic;$/;"	typedef	line:54	file:
+MSG_QUEUE_SIZE	/Users/poppe/MyCode/RIOT/tests/driver_ksz8851snl/main.c	/^#define MSG_QUEUE_SIZE /;"	macro	line:45	file:
+msgq	/Users/poppe/MyCode/RIOT/tests/driver_ksz8851snl/main.c	/^msg_t msgq[MSG_QUEUE_SIZE];$/;"	variable	line:46
+main	/Users/poppe/MyCode/RIOT/tests/driver_ksz8851snl/main.c	/^int main(void)$/;"	function	line:49	signature:(void)
+KSZ8851SNL_H	/Users/poppe/MyCode/RIOT/drivers/include/ksz8851snl.h	/^#define KSZ8851SNL_H$/;"	macro	line:22
+netdev	/Users/poppe/MyCode/RIOT/drivers/include/ksz8851snl.h	/^    netdev2_t netdev;       \/**< extended netdev2 structure *\/$/;"	member	line:41	struct:__anon1
+spi	/Users/poppe/MyCode/RIOT/drivers/include/ksz8851snl.h	/^    spi_t spi;              \/**< SPI interface*\/$/;"	member	line:42	struct:__anon1
+cs	/Users/poppe/MyCode/RIOT/drivers/include/ksz8851snl.h	/^    gpio_t cs;              \/**< SPI chip select pin *\/$/;"	member	line:43	struct:__anon1
+rst	/Users/poppe/MyCode/RIOT/drivers/include/ksz8851snl.h	/^    gpio_t rst;             \/**< Reset KSZ chip pin *\/$/;"	member	line:44	struct:__anon1
+int_pin	/Users/poppe/MyCode/RIOT/drivers/include/ksz8851snl.h	/^    gpio_t int_pin;         \/**< KSZ interrupt pin *\/$/;"	member	line:45	struct:__anon1
+mutex	/Users/poppe/MyCode/RIOT/drivers/include/ksz8851snl.h	/^    mutex_t mutex;          \/**< KSZ mutex *\/$/;"	member	line:46	struct:__anon1
+ksz8851snl_t	/Users/poppe/MyCode/RIOT/drivers/include/ksz8851snl.h	/^} ksz8851snl_t;$/;"	typedef	line:47	typeref:struct:__anon1
+ENABLE_DEBUG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^#define ENABLE_DEBUG /;"	macro	line:34	file:
+SECT_NAME	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^#define SECT_NAME /;"	macro	line:37	file:
+lock	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void lock(ksz8851snl_t *dev)$/;"	function	line:39	file:	signature:(ksz8851snl_t *dev)
+unlock	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void unlock(ksz8851snl_t *dev)$/;"	function	line:44	file:	signature:(ksz8851snl_t *dev)
+ksz_spi_transfer	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void ksz_spi_transfer(ksz8851snl_t *dev, char *out, char *in, int len)$/;"	function	line:49	file:	signature:(ksz8851snl_t *dev, char *out, char *in, int len)
+reg_set	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void reg_set(ksz8851snl_t *dev, uint16_t reg, uint16_t value)$/;"	function	line:58	file:	signature:(ksz8851snl_t *dev, uint16_t reg, uint16_t value)
+reg_get	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static uint16_t reg_get(ksz8851snl_t *dev, uint16_t reg)$/;"	function	line:73	file:	signature:(ksz8851snl_t *dev, uint16_t reg)
+reg_bits_set	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void reg_bits_set(ksz8851snl_t *dev, uint16_t reg, uint16_t bit_mask)$/;"	function	line:91	file:	signature:(ksz8851snl_t *dev, uint16_t reg, uint16_t bit_mask)
+reg_bits_clear	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void reg_bits_clear(ksz8851snl_t *dev, uint16_t reg, uint16_t bit_mask)$/;"	function	line:99	file:	signature:(ksz8851snl_t *dev, uint16_t reg, uint16_t bit_mask)
+reg_get8	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static uint8_t reg_get8(ksz8851snl_t *dev, uint16_t reg)$/;"	function	line:108	file:	signature:(ksz8851snl_t *dev, uint16_t reg)
+eeprom_data	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^typedef struct eeprom_data {$/;"	struct	line:132	file:
+reg	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint16_t    reg;$/;"	member	line:133	struct:eeprom_data	file:
+cs	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint8_t     cs;$/;"	member	line:134	struct:eeprom_data	file:
+clk	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint8_t     clk;$/;"	member	line:135	struct:eeprom_data	file:
+ctrl	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint8_t     ctrl;$/;"	member	line:136	struct:eeprom_data	file:
+data_bit	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint8_t     data_bit;$/;"	member	line:137	struct:eeprom_data	file:
+eeprom_data_t	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^}eeprom_data_t;$/;"	typedef	line:138	typeref:struct:eeprom_data	file:
+ksz8851snl_eepromDataFrameSend	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void inline ksz8851snl_eepromDataFrameSend(eeprom_data_t *data)$/;"	function	line:140	signature:(eeprom_data_t *data)
+ksz8851snl_eepromSendBit	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_eepromSendBit(eeprom_data_t *running_data)$/;"	function	line:150	signature:(eeprom_data_t *running_data)
+ksz8851snl_eepromSendEwen	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_eepromSendEwen(eeprom_data_t *running_data)$/;"	function	line:160	signature:(eeprom_data_t *running_data)
+ksz8851snl_eepromWriteByte	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_eepromWriteByte(ksz8851snl_t *dev, uint8_t addr, uint16_t data)$/;"	function	line:186	signature:(ksz8851snl_t *dev, uint8_t addr, uint16_t data)
+ksz8851snl_eepromWriteMac	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_eepromWriteMac(ksz8851snl_t *dev)$/;"	function	line:248	signature:(ksz8851snl_t *dev)
+ksz8851snl_get_mac_addr	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void ksz8851snl_get_mac_addr(netdev2_t *encdev, uint8_t* buf)$/;"	function	line:258	file:	signature:(netdev2_t *encdev, uint8_t* buf)
+ksz8851snl_get_iid	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_get_iid(netdev2_t *netdev, eui64_t *value, size_t max_len)$/;"	function	line:270	file:	signature:(netdev2_t *netdev, eui64_t *value, size_t max_len)
+ksz8851snl_get	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_get(netdev2_t *dev, netopt_t opt, void *value, size_t max_len)$/;"	function	line:284	file:	signature:(netdev2_t *dev, netopt_t opt, void *value, size_t max_len)
+ksz8851snl_set	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_set(netdev2_t *dev, netopt_t opt, void *value, size_t value_len)$/;"	function	line:329	file:	signature:(netdev2_t *dev, netopt_t opt, void *value, size_t value_len)
+ksz8851snl_send	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_send(netdev2_t *netdev, const struct iovec *vector, int count)$/;"	function	line:356	file:	signature:(netdev2_t *netdev, const struct iovec *vector, int count)
+ksz8851snl_recv	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_recv(netdev2_t *netdev, char* buf, int len)$/;"	function	line:437	file:	signature:(netdev2_t *netdev, char* buf, int len)
+ksz8851snl_pIsr	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void ksz8851snl_pIsr(void *netdev)$/;"	function	line:510	file:	signature:(void *netdev)
+ksz8851snl_isr	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void ksz8851snl_isr(netdev2_t *netdev)$/;"	function	line:521	file:	signature:(netdev2_t *netdev)
+ksz8851snl_reset	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_reset(ksz8851snl_t *dev)$/;"	function	line:579	file:	signature:(ksz8851snl_t *dev)
+ksz8851snl_init	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_init(netdev2_t *encdev)$/;"	function	line:612	file:	signature:(netdev2_t *encdev)
+netdev2_driver_ksz8851snl	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^const static netdev2_driver_t netdev2_driver_ksz8851snl = {$/;"	variable	line:718	file:
+ksz8851snl_setup	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_setup(ksz8851snl_t *dev, spi_t spi, gpio_t cs, gpio_t int_pin,$/;"	function	line:727	signature:(ksz8851snl_t *dev, spi_t spi, gpio_t cs, gpio_t int_pin, gpio_t rst_pin)

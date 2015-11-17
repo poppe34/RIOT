@@ -24,6 +24,7 @@
 #include "net/gnrc/ndp.h"
 #include "net/gnrc/sixlowpan/ctx.h"
 #include "net/gnrc/sixlowpan/nd.h"
+#include "net/gnrc/sixlowpan/nd/router.h"
 #include "net/protnum.h"
 #include "thread.h"
 #include "utlist.h"
@@ -241,11 +242,13 @@ static void *_event_loop(void *args)
                 DEBUG("ipv6: Unicast router solicitation event received\n");
                 gnrc_sixlowpan_nd_uc_rtr_sol((gnrc_ipv6_nc_t *)msg.content.ptr);
                 break;
+#   ifdef MODULE_GNRC_SIXLOWPAN_CTX
             case GNRC_SIXLOWPAN_ND_MSG_DELETE_CTX:
                 DEBUG("ipv6: Delete 6LoWPAN context event received\n");
                 gnrc_sixlowpan_ctx_remove(((((gnrc_sixlowpan_ctx_t *)msg.content.ptr)->flags_id) &
                                            GNRC_SIXLOWPAN_CTX_FLAGS_CID_MASK));
                 break;
+#   endif
 #endif
 #ifdef MODULE_GNRC_SIXLOWPAN_ND_ROUTER
             case GNRC_SIXLOWPAN_ND_MSG_ABR_TIMEOUT:
@@ -537,6 +540,15 @@ static inline kernel_pid_t _next_hop_l2addr(uint8_t *l2addr, uint8_t *l2addr_len
 #endif
 #if defined(MODULE_GNRC_NDP_NODE)
     found_iface = gnrc_ndp_node_next_hop_l2addr(l2addr, l2addr_len, iface, dst, pkt);
+#elif !defined(MODULE_GNRC_SIXLOWPAN_ND) && defined(MODULE_GNRC_IPV6_NC)
+    (void)pkt;
+    gnrc_ipv6_nc_t *nc = gnrc_ipv6_nc_get(iface, dst);
+    if ((nc == NULL) || !gnrc_ipv6_nc_is_reachable(nc)) {
+        return KERNEL_PID_UNDEF;
+    }
+    found_iface = nc->iface;
+    *l2addr_len = nc->l2_addr_len;
+    memcpy(l2addr, nc->l2_addr, nc->l2_addr_len);
 #elif !defined(MODULE_GNRC_SIXLOWPAN_ND)
     found_iface = KERNEL_PID_UNDEF;
     (void)l2addr;

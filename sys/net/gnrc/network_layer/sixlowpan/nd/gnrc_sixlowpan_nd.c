@@ -20,7 +20,6 @@
 #include "net/gnrc/sixlowpan.h"
 #include "net/gnrc/sixlowpan/ctx.h"
 #include "random.h"
-#include "timex.h"
 
 #include "net/gnrc/sixlowpan/nd.h"
 
@@ -373,6 +372,7 @@ uint8_t gnrc_sixlowpan_nd_opt_ar_handle(kernel_pid_t iface, ipv6_hdr_t *ipv6,
 
 bool gnrc_sixlowpan_nd_opt_6ctx_handle(uint8_t icmpv6_type, sixlowpan_nd_opt_6ctx_t *ctx_opt)
 {
+#ifdef MODULE_GNRC_SIXLOWPAN_CTX
     if (((ctx_opt->ctx_len <= 64) && (ctx_opt->len != 2)) ||
         ((ctx_opt->ctx_len > 64) && (ctx_opt->len != 3))) {
         DEBUG("6lo nd: invalid 6LoWPAN context option received\n");
@@ -386,6 +386,7 @@ bool gnrc_sixlowpan_nd_opt_6ctx_handle(uint8_t icmpv6_type, sixlowpan_nd_opt_6ct
     gnrc_sixlowpan_ctx_update(sixlowpan_nd_opt_6ctx_get_cid(ctx_opt), (ipv6_addr_t *)(ctx_opt + 1),
                               ctx_opt->ctx_len, byteorder_ntohs(ctx_opt->ltime),
                               sixlowpan_nd_opt_6ctx_is_comp(ctx_opt));
+#endif
     return true;
 }
 

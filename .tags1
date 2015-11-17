@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ENABLE_DEBUG	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^#define ENABLE_DEBUG /;"	macro	line:34	file:
+SECT_NAME	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^#define SECT_NAME /;"	macro	line:37	file:
+lock	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void lock(ksz8851snl_t *dev)$/;"	function	line:39	file:	signature:(ksz8851snl_t *dev)
+unlock	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void unlock(ksz8851snl_t *dev)$/;"	function	line:44	file:	signature:(ksz8851snl_t *dev)
+ksz_spi_transfer	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void ksz_spi_transfer(ksz8851snl_t *dev, char *out, char *in, int len)$/;"	function	line:49	file:	signature:(ksz8851snl_t *dev, char *out, char *in, int len)
+reg_set	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void reg_set(ksz8851snl_t *dev, uint16_t reg, uint16_t value)$/;"	function	line:58	file:	signature:(ksz8851snl_t *dev, uint16_t reg, uint16_t value)
+reg_get	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static uint16_t reg_get(ksz8851snl_t *dev, uint16_t reg)$/;"	function	line:73	file:	signature:(ksz8851snl_t *dev, uint16_t reg)
+reg_bits_set	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void reg_bits_set(ksz8851snl_t *dev, uint16_t reg, uint16_t bit_mask)$/;"	function	line:91	file:	signature:(ksz8851snl_t *dev, uint16_t reg, uint16_t bit_mask)
+reg_bits_clear	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void reg_bits_clear(ksz8851snl_t *dev, uint16_t reg, uint16_t bit_mask)$/;"	function	line:99	file:	signature:(ksz8851snl_t *dev, uint16_t reg, uint16_t bit_mask)
+reg_get8	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static uint8_t reg_get8(ksz8851snl_t *dev, uint16_t reg)$/;"	function	line:108	file:	signature:(ksz8851snl_t *dev, uint16_t reg)
+eeprom_data	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^typedef struct eeprom_data {$/;"	struct	line:132	file:
+reg	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint16_t    reg;$/;"	member	line:133	struct:eeprom_data	file:
+cs	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint8_t     cs;$/;"	member	line:134	struct:eeprom_data	file:
+clk	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint8_t     clk;$/;"	member	line:135	struct:eeprom_data	file:
+ctrl	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint8_t     ctrl;$/;"	member	line:136	struct:eeprom_data	file:
+data_bit	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^    uint8_t     data_bit;$/;"	member	line:137	struct:eeprom_data	file:
+eeprom_data_t	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^}eeprom_data_t;$/;"	typedef	line:138	typeref:struct:eeprom_data	file:
+ksz8851snl_eepromDataFrameSend	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void inline ksz8851snl_eepromDataFrameSend(eeprom_data_t *data)$/;"	function	line:140	signature:(eeprom_data_t *data)
+ksz8851snl_eepromSendBit	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_eepromSendBit(eeprom_data_t *running_data)$/;"	function	line:150	signature:(eeprom_data_t *running_data)
+ksz8851snl_eepromSendEwen	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_eepromSendEwen(eeprom_data_t *running_data)$/;"	function	line:160	signature:(eeprom_data_t *running_data)
+ksz8851snl_eepromWriteByte	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_eepromWriteByte(ksz8851snl_t *dev, uint8_t addr, uint16_t data)$/;"	function	line:186	signature:(ksz8851snl_t *dev, uint8_t addr, uint16_t data)
+ksz8851snl_eepromWriteMac	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_eepromWriteMac(ksz8851snl_t *dev)$/;"	function	line:248	signature:(ksz8851snl_t *dev)
+ksz8851snl_get_mac_addr	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void ksz8851snl_get_mac_addr(netdev2_t *encdev, uint8_t* buf)$/;"	function	line:258	file:	signature:(netdev2_t *encdev, uint8_t* buf)
+ksz8851snl_get_iid	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_get_iid(netdev2_t *netdev, eui64_t *value, size_t max_len)$/;"	function	line:270	file:	signature:(netdev2_t *netdev, eui64_t *value, size_t max_len)
+ksz8851snl_get	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_get(netdev2_t *dev, netopt_t opt, void *value, size_t max_len)$/;"	function	line:284	file:	signature:(netdev2_t *dev, netopt_t opt, void *value, size_t max_len)
+ksz8851snl_set	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_set(netdev2_t *dev, netopt_t opt, void *value, size_t value_len)$/;"	function	line:329	file:	signature:(netdev2_t *dev, netopt_t opt, void *value, size_t value_len)
+ksz8851snl_send	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_send(netdev2_t *netdev, const struct iovec *vector, int count)$/;"	function	line:356	file:	signature:(netdev2_t *netdev, const struct iovec *vector, int count)
+ksz8851snl_recv	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_recv(netdev2_t *netdev, char* buf, int len)$/;"	function	line:437	file:	signature:(netdev2_t *netdev, char* buf, int len)
+ksz8851snl_pIsr	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void ksz8851snl_pIsr(void *netdev)$/;"	function	line:510	file:	signature:(void *netdev)
+ksz8851snl_isr	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static void ksz8851snl_isr(netdev2_t *netdev)$/;"	function	line:521	file:	signature:(netdev2_t *netdev)
+ksz8851snl_reset	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_reset(ksz8851snl_t *dev)$/;"	function	line:579	file:	signature:(ksz8851snl_t *dev)
+ksz8851snl_init	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^static int ksz8851snl_init(netdev2_t *encdev)$/;"	function	line:612	file:	signature:(netdev2_t *encdev)
+netdev2_driver_ksz8851snl	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^const static netdev2_driver_t netdev2_driver_ksz8851snl = {$/;"	variable	line:718	file:
+ksz8851snl_setup	/Users/poppe/MyCode/RIOT/drivers/ksz8851snl/ksz8851_netdev.c	/^void ksz8851snl_setup(ksz8851snl_t *dev, spi_t spi, gpio_t cs, gpio_t int_pin,$/;"	function	line:727	signature:(ksz8851snl_t *dev, spi_t spi, gpio_t cs, gpio_t int_pin, gpio_t rst_pin)

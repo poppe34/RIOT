@@ -230,20 +230,20 @@ static void *_event_loop(void *args)
 
 void _update_lifetime(void)
 {
-    uint64_t now = xtimer_now64();
+    uint32_t now = xtimer_now();
     gnrc_rpl_parent_t *parent;
     for (uint8_t i = 0; i < GNRC_RPL_PARENTS_NUMOF; ++i) {
         parent = &gnrc_rpl_parents[i];
         if (parent->state != 0) {
-            if ((int64_t)(parent->lifetime - now) <= (int64_t) (GNRC_RPL_LIFETIME_UPDATE_STEP
-                * SEC_IN_USEC)) {
+            if ((int32_t)(parent->lifetime - (now / SEC_IN_USEC)) <=
+                GNRC_RPL_LIFETIME_UPDATE_STEP) {
                 gnrc_rpl_dodag_t *dodag = parent->dodag;
                 gnrc_rpl_parent_remove(parent);
                 gnrc_rpl_parent_update(dodag, NULL);
                 continue;
             }
-            else if ((int64_t)(parent->lifetime - now) <=
-                     (int64_t) (GNRC_RPL_LIFETIME_UPDATE_STEP * SEC_IN_USEC * 2)) {
+            else if ((int32_t)(parent->lifetime - (now / SEC_IN_USEC))
+                    <= (GNRC_RPL_LIFETIME_UPDATE_STEP * 2)) {
                 gnrc_rpl_send_DIS(parent->dodag->instance, &parent->addr);
             }
         }
@@ -256,7 +256,7 @@ void gnrc_rpl_delay_dao(gnrc_rpl_dodag_t *dodag)
     dodag->dao_time = GNRC_RPL_DEFAULT_DAO_DELAY * SEC_IN_USEC;
     dodag->dao_counter = 0;
     dodag->dao_ack_received = false;
-    xtimer_set_msg64(&dodag->dao_timer, dodag->dao_time, &dodag->dao_msg, gnrc_rpl_pid);
+    xtimer_set_msg(&dodag->dao_timer, dodag->dao_time, &dodag->dao_msg, gnrc_rpl_pid);
 }
 
 void gnrc_rpl_long_delay_dao(gnrc_rpl_dodag_t *dodag)
@@ -264,7 +264,7 @@ void gnrc_rpl_long_delay_dao(gnrc_rpl_dodag_t *dodag)
     dodag->dao_time = GNRC_RPL_REGULAR_DAO_INTERVAL * SEC_IN_USEC;
     dodag->dao_counter = 0;
     dodag->dao_ack_received = false;
-    xtimer_set_msg64(&dodag->dao_timer, dodag->dao_time, &dodag->dao_msg, gnrc_rpl_pid);
+    xtimer_set_msg(&dodag->dao_timer, dodag->dao_time, &dodag->dao_msg, gnrc_rpl_pid);
 }
 
 void _dao_handle_send(gnrc_rpl_dodag_t *dodag)
@@ -273,7 +273,7 @@ void _dao_handle_send(gnrc_rpl_dodag_t *dodag)
         dodag->dao_counter++;
         gnrc_rpl_send_DAO(dodag->instance, NULL, dodag->default_lifetime);
         dodag->dao_time = GNRC_RPL_DEFAULT_WAIT_FOR_DAO_ACK * SEC_IN_USEC;
-        xtimer_set_msg64(&dodag->dao_timer, dodag->dao_time, &dodag->dao_msg, gnrc_rpl_pid);
+        xtimer_set_msg(&dodag->dao_timer, dodag->dao_time, &dodag->dao_msg, gnrc_rpl_pid);
     }
     else if (dodag->dao_ack_received == false) {
         gnrc_rpl_long_delay_dao(dodag);
